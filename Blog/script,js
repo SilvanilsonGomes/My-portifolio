@@ -1,0 +1,15 @@
+
+document.querySelectorAll('.leia-mais-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const article = btn.closest('.blog-post');
+    const extra = article.querySelector('.conteudo-extra');
+    const expanded = extra.classList.contains('active');
+    if (expanded) {
+      extra.classList.remove('active');
+      btn.textContent = 'Leia mais';
+    } else {
+      extra.classList.add('active');
+      btn.textContent = 'Mostrar menos';
+    }
+  });
+});
