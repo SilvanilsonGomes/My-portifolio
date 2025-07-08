@@ -23,6 +23,7 @@ html, body {
   top: 0;
   left: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -58,6 +59,80 @@ html, body {
   background-color: #000;
   color: #ffa500;
 }
+/* Esconde o input do hamburguer */
+#menu-toggle {
+  display: none;
+}
+
+/* O botão hamburguer (aparece só no mobile) */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  justify-content: space-between;
+  margin-left: 12px;
+}
+.menu-icon span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #ffa500;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* --- RESPONSIVO: NAVBAR HAMBURGUER --- */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    display: none; /* Esconde o menu por padrão */
+    z-index: 999;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 16px 28px;
+    border-radius: 0;
+    border-bottom: 1px solid #222;
+    font-size: 1.15rem;
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  .menu-icon {
+    display: flex; /* Mostra o hamburguer */
+  }
+  /* Mostra o menu quando o input está checado */
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+  /* Animação do hamburguer */
+  #menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: #fff;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: #fff;
+  }
+}
+
 
 /* Conteúdo principal */
 .main-content {
@@ -132,6 +207,28 @@ html, body {
   font-size: 1rem;
 }
 
+#Meu-Curriculo {
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #000000;
+  margin-bottom: 12px;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px #ffa500;
+  border: 4px solid #ffa500;
+  background: #f3ba01;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+#Meu-Curriculo:hover {
+  background: #ffa500;
+  color: #fff;
+}
 /* LINHA DO TEMPO */
 .timeline {
   display: flex;
@@ -212,11 +309,10 @@ html, body {
   min-width: 260px;
   max-width: 95vw;
   z-index: 2000;
-  max-height: 80vh;      /* <--- ESSENCIAL */
-  overflow-y: auto;      /* <--- ESSENCIAL */
+  max-height: 80vh;
+  overflow-y: auto;
   animation: fadeIn 0.3s;
-} 
-
+}
 .timeline-card.active {
   display: block;
 }
@@ -306,57 +402,6 @@ html, body {
   width: 100%;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-  .sobre-container {
-    flex-direction: horizontal;
-    align-items: center;
-    padding: 30px 12px;
-    gap: 24px;
-  }
-  .sobre-main {
-    padding: 0 4px;
-  }
-}
-@media (max-width: 700px) {
-  .timeline {
-    gap: 20px;
-    padding: 10px 0 40px 0;
-  }
-  .timeline-card {
-    min-width: 90vw;
-    left: 50vw;
-    transform: translateX(-50%);
-    top: 80px;
-    padding: 14px 5vw 12px 5vw;
-  }
-  .footer-container {
-    flex-direction: horizontal;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .footer-info,
-  .footer-social {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 6px;
-  }
-  .footer-social a {
-    display: inline;
-    margin-bottom: 0;
-  }
-  .footer-copy {
-    margin-top: 12px;
-  }
-}
-@media (max-width: 600px) {
-  .sobre-container {
-    padding: 12px 4px;
-  }
-  .sobre-info h1 {
-    font-size: 1.3rem;
-  }
-}
 #leia-mais-btn {
   display: inline-block;
   background: #ffa500;
@@ -445,6 +490,12 @@ html, body {
 
 /* Responsivo: só fica um embaixo do outro em telas pequenas */
 @media (max-width: 900px) {
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 12px;
+    gap: 24px;
+  }
   .chalkboards-container {
     flex-direction: column;
     gap: 24px;
@@ -452,5 +503,51 @@ html, body {
   }
   .skills-chalkboard {
     max-width: 98vw;
+  }
+  .timeline {
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+    padding: 20px 0;
+  }
+}
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-info,
+  .footer-social {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+  .footer-social a {
+    display: inline;
+    margin-bottom: 0;
+  }
+  .footer-copy {
+    margin-top: 12px;
+  }
+  .timeline-card {
+    min-width: 90vw;
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 80px;
+    padding: 14px 5vw 12px 5vw;
+  }
+}
+@media (max-width: 600px) {
+  .sobre-container {
+    padding: 12px 4px;
+  }
+  .sobre-info h1 {
+    font-size: 1.3rem;
+  }
+  .skills-chalkboard {
+    min-width: 80vw;
+    max-width: 96vw;
+    padding: 10px 5px 8px 10px;
   }
 }

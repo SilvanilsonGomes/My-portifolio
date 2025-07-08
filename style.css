@@ -22,11 +22,11 @@ body {
 }
 
 .main-content {
-  display: flex; 
+  display: flex;
   align-items: flex-start;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 100px 20px 40px 20px;
-  gap: 30px; 
+  gap: 30px;
   flex-wrap: wrap;
   flex: 1;
 }
@@ -38,21 +38,22 @@ body {
   padding: 10px 20px;
   background-color: #333;
   width: 100%;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  z-index: 1000; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 .logo-container {
   display: flex;
-  align-items: center; 
-  gap: 10px; 
+  align-items: center;
+  gap: 10px;
 }
 .logo-container img {
-  height: 40px; 
+  height: 40px;
 }
 .logo-container .logo-text {
-  font-size: 20px; 
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
 }
@@ -65,24 +66,25 @@ body {
 }
 .navbar .nav-links a {
   text-decoration: none;
-  color: #fff; 
+  color: #fff;
   font-size: 18px;
-  padding: 8px 20px; 
+  padding: 8px 20px;
   border-radius: 20px;
 }
 .navbar .nav-links a:hover {
   background-color: #000000;
-  color: #ffa500; 
+  color: #ffa500;
 }
+
 .presentation {
   flex: 1;
   max-width: 50%;
   min-width: 300px;
 }
 .presentation h1 {
-  font-size: 38px; 
-  font-family: 'Orbitron', sans-serif; 
-  color: #0c0b00; 
+  font-size: 38px;
+  font-family: 'Orbitron', sans-serif;
+  color: #0c0b00;
   margin-bottom: 20px;
 }
 .presentation p {
@@ -91,13 +93,13 @@ body {
   margin: 0;
 }
 .photo-container {
-  flex: 1; 
+  flex: 1;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   min-width: 240px;
 }
 .photo-container img {
-  max-width: 80%; 
+  max-width: 80%;
   height: auto;
 }
 .botao-sobre {
@@ -186,16 +188,6 @@ body {
   border: 2px solid #ff9800;
   box-shadow: 0 4px 16px rgba(255,179,71,0.18);
 }
-@media (max-width: 900px) {
-  .carousel-viewport {
-    width: 320px;
-  }
-  .project-card {
-    min-width: 300px;
-    max-width: 300px;
-    margin: 0 10px;
-  }
-}
 .project-card h3 {
   text-align: center;
   margin-bottom: 10px;
@@ -254,6 +246,8 @@ body {
     margin-bottom: 18px;
   }
 }
+
+/* --- SKILLS BLACKBOARD --- */
 .skills-blackboard {
   background: #222;
   color: #eee;
@@ -320,6 +314,8 @@ body {
   margin-left: 4px;
   font-size: 0.95em;
 }
+
+/* --- FLOAT CARD INFO --- */
 .card-float-info {
   position: fixed;
   left: 0; top: 0; width: 100vw; height: 100vh;
@@ -349,4 +345,95 @@ body {
 }
 @media (max-width: 600px) {
   .float-content { min-width: 200px; padding: 18px 8px 14px 14px; }
+}
+
+/* ------------ TORNAR O SITE RESPONSIVO ------------- */
+@media (max-width: 1100px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 10px 30px 10px;
+    gap: 28px;
+  }
+  .presentation, .photo-container {
+    max-width: 100%;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-viewport {
+    width: 320px;
+    max-width: 98vw;
+  }
+  .project-card {
+    min-width: 260px;
+    max-width: 98vw;
+    margin: 0 6px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 4vw;
+    gap: 0;
+  }
+  .logo-container {
+    margin-bottom: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    padding: 11px 0;
+    text-align: left;
+  }
+  .main-content {
+    padding: 60px 4vw 10px 4vw;
+  }
+}
+
+/* Skills Blackboard no mobile */
+@media (max-width: 600px) {
+  .skills-blackboard {
+    max-width: 98vw;
+    padding: 12px 6px 12px 12px;
+    font-size: 0.98em;
+  }
+  .presentation h1 {
+    font-size: 1.2em;
+  }
+  .photo-container img {
+    max-width: 130px;
+  }
+  .carousel-title {
+    font-size: 1.1em;
+  }
+  .footer-copy {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-footer {
+    padding: 20px 2vw 10px 2vw;
+    font-size: 0.93em;
+  }
+  .footer-info, .footer-social {
+    min-width: 120px;
+    font-size: 0.99em;
+  }
+  .skills-blackboard {
+    font-size: 0.94em;
+    padding: 8px 2px 8px 8px;
+  }
 }
