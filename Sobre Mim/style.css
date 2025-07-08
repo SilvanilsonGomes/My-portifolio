@@ -14,8 +14,8 @@ html, body {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: #333;
   width: 100%;
@@ -23,48 +23,9 @@ html, body {
   top: 0;
   left: 0;
   z-index: 1000;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo-container img {
-  height: 40px;
-}
-.logo-text {
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 10px;
-  padding: 10px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  padding: 8px 20px;
-  border-radius: 20px;
-}
-.nav-links a.active,
-.nav-links a:hover {
-  background-color: #000;
-  color: #ffa500;
-}
-/* Esconde o input do hamburguer */
-#menu-toggle {
-  display: none;
-}
-
-/* O botão hamburguer (aparece só no mobile) */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -72,7 +33,9 @@ html, body {
   width: 32px;
   height: 24px;
   justify-content: space-between;
-  margin-left: 12px;
+  position: relative;
+  z-index: 1100;
+  /* Remova margin-left/margin-right aqui! */
 }
 .menu-icon span {
   display: block;
@@ -83,20 +46,26 @@ html, body {
   transition: 0.3s;
 }
 
-/* --- RESPONSIVO: NAVBAR HAMBURGUER --- */
+/* Esconde o input do hamburguer */
+#menu-toggle {
+  display: none;
+}
+
+/* NAVBAR HAMBURGER MOBILE */
 @media (max-width: 900px) {
   .nav-links {
     position: absolute;
     top: 60px;
+    right: 0;
     left: 0;
     background: #333;
-    width: 100%;
+    width: 100vw;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     padding: 0;
     margin: 0;
-    display: none; /* Esconde o menu por padrão */
+    display: none;
     z-index: 999;
   }
   .nav-links li {
@@ -113,9 +82,9 @@ html, body {
     border-bottom: none;
   }
   .menu-icon {
-    display: flex; /* Mostra o hamburguer */
+    display: flex;
+    margin: 0; /* Remove margin que empurra para fora */
   }
-  /* Mostra o menu quando o input está checado */
   #menu-toggle:checked + .menu-icon + .nav-links {
     display: flex;
   }
@@ -132,7 +101,6 @@ html, body {
     background: #fff;
   }
 }
-
 
 /* Conteúdo principal */
 .main-content {
