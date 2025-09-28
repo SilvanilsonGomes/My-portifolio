@@ -57,6 +57,55 @@ body {
   background-color: #000000;
   color: #ffa500;
 }
+/* Esconde o input do hamburguer */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  justify-content: space-between;
+  z-index: 1100;
+}
+.menu-icon span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #ffa500;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+    border-bottom: 1px solid #222;
+  }
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+}
 
 /* ----------- BLOG MAIN STRUCTURE ----------- */
 main.blog-main.nova-estrutura {
