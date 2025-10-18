@@ -66,7 +66,13 @@ body {
   border-radius: 4px;
   transition: 0.3s;
 }
+/* Móvel */ @media (max-width: 900px) { .menu-icon { display: flex; }
 
+/* Escolhe o menu por padrão no celular */ .nav-links { display: none; flex-direction: column; background: #333; width: 100%; position: absolute; top: 60px; left: 0; }
+
+/* Quando o JS adiciona .open, mostra */ .nav-links.open { display: flex; }
+
+.nav-links li { width: 100%; } .nav-links a { display: block; padding: 14px 20px; border-bottom: 1px solid #222; }
 /* Mobile */
 @media (max-width: 900px) {
   .menu-icon {
@@ -474,16 +480,16 @@ body {
 }
 
 @media (max-width: 500px) {
-  .site-footer {
+    .site-footer {
     padding: 20px 2vw 10px 2vw;
     font-size: 0.93em;
   }
+}
   .footer-info, .footer-social {
     min-width: 120px;
     font-size: 0.99em;
   }
   .skills-blackboard {
     font-size: 0.94em;
-    padding: 8px 2px 8px 8px;
-  }
+    padding: 8px 2px 8px 8px;  }
 }

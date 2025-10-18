@@ -88,3 +88,14 @@ document.getElementById('closeFloatInfo').onclick = function(e) {
 document.getElementById('floatInfo').addEventListener('click', function(e) {
   if (e.target === this) this.style.display = 'none';
 });
+document.addEventListener('DOMContentLoaded', function () { const btn = document.getElementById('hamburger'); const nav = document.getElementById('main-nav');
+
+if (!btn || !nav) return;
+
+ btn.addEventListener('click', function (e) { const isOpen = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); e.stopPropagation(); });
+
+ nav.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }); });
+
+ document.addEventListener('click', (e) => { if (!nav.contains(e.target) && !btn.contains(e.target)) { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+
+ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } }); });

@@ -87,7 +87,13 @@ html, body {
   border-radius: 4px;
   transition: 0.3s;
 }
+/* Móvel */ @media (max-width: 900px) { .menu-icon { display: flex; }
 
+/* Escolhe o menu por padrão no celular */ .nav-links { display: none; flex-direction: column; background: #333; width: 100%; position: absolute; top: 60px; left: 0; }
+
+/* Quando o JS adiciona .open, mostra */ .nav-links.open { display: flex; }
+
+.nav-links li { width: 100%; } .nav-links a { display: block; padding: 14px 20px; border-bottom: 1px solid #222; }
 /* Esconde o input do hamburguer */
 #menu-toggle {
   display: none;
@@ -560,4 +566,5 @@ html, body {
     max-width: 96vw;
     padding: 10px 5px 8px 10px;
   }
+}
 }

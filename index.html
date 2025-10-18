@@ -21,14 +21,9 @@
   </div>
 
   <!-- Checkbox escondido para controlar o menu -->
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+  <button id="hamburger" class="menu-icon" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"> <span> </span> <span> </span> <span> </span> </button>
 
-  <ul class="nav-links">
+<ul class="nav-links" id="main-nav"></ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="blog/blog.html">Blog</a></li>
     <li><a href="sobremim/sobremim.html">Sobre Mim</a></li>
