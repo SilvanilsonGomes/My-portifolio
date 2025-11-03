@@ -22,11 +22,11 @@ body {
 }
 
 .main-content {
-  display: flex;
+  display: flex; 
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 100px 20px 40px 20px;
-  gap: 30px;
+  gap: 30px; 
   flex-wrap: wrap;
   flex: 1;
 }
@@ -38,11 +38,41 @@ body {
   padding: 10px 20px;
   background-color: #333;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  flex-wrap: wrap;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1000; 
+}
+.logo-container {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+.logo-container img {
+  height: 40px; 
+}
+.logo-container .logo-text {
+  font-size: 20px; 
+  font-weight: bold;
+  color: #fff;
+}
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #ffffff; 
+  font-size: 18px;
+  padding: 8px 20px; 
+  border-radius: 20px;
+}
+.navbar .nav-links a:hover {
+  background-color: #000000;
+  color: #ffa500; 
 }
 /* Esconde o input do hamburguer */
 #menu-toggle {
@@ -65,8 +95,7 @@ body {
   background: #ffa500;
   border-radius: 4px;
   transition: 0.3s;
-
-  
+}
 /* Mobile */
 @media (max-width: 900px) {
   .menu-icon {
@@ -93,39 +122,6 @@ body {
     display: flex;
   }
 }
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo-container img {
-  height: 40px;
-}
-.logo-container .logo-text {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-.navbar .nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 10px;
-  padding: 10px;
-}
-.navbar .nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  padding: 8px 20px;
-  border-radius: 20px;
-}
-.navbar .nav-links a:hover {
-  background-color: #000000;
-  color: #ffa500;
-}
-
 .presentation {
   flex: 1;
   max-width: 50%;
@@ -214,7 +210,6 @@ body {
   height: 40px;
   font-size: 24px;
   cursor: pointer;
-  transition: background 0.2s;
   z-index: 10;
   position: relative;
 }
@@ -486,4 +481,4 @@ body {
   .skills-blackboard {
     font-size: 0.94em;
     padding: 8px 2px 8px 8px;  }
-}
+
